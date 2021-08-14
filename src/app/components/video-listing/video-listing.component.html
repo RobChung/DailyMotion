@@ -1,1 +1,9 @@
-<p>video-listing works!</p>
+<h1>Your Playlist</h1>
+<!-- <p *ngIf="videoList === '[]'; else displaylist">
+    There are currently no videos in your playlist.
+</p> -->
+<ng-template #displaylist>
+    <div>
+        <app-video></app-video>
+    </div>
+</ng-template>

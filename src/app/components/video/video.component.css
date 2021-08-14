@@ -1,0 +1,10 @@
+div {
+    display: grid;
+    grid-template-columns: 3;
+    text-align: center;
+}
+
+button {
+    margin: 0 auto;
+    width: 10%;
+}
