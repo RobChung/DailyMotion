@@ -6,7 +6,9 @@ import { PlaylistPageComponent } from './pages/playlist-page/playlist-page.compo
 // manages all URL endpoints the app will respond to
 const routes: Routes = [
     { path: "home", component: HomePageComponent },
-    { path: "playlist", component: PlaylistPageComponent}
+    { path: "playlist", component: PlaylistPageComponent },
+    // All non-existent routes lead to HomePage
+    { path: "**", component: HomePageComponent }
 ];
 
 @NgModule({

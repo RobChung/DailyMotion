@@ -6,3 +6,8 @@ li{
 nav{
     text-align: center;
 }
+
+img {
+    display: inline;
+    width:20vw;
+}

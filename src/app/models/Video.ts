@@ -1,10 +1,17 @@
 export default interface Video {
-    // plus preview img, profile photo of creator?
-    id:number,
-    thumbnailURL:string,
+    id:string,
+    thumbnail_360_url:string,
+    created_time:number,
+    views_total:number,
     title:string,
-    dateCreated:string,
-    totalViews:number,
-    creator:string,
-    creatorAvatarURL:string
+    "owner.username":string,
+    "owner.avatar_80_url":string
 }
+
+    // id:string,
+    // thumbnailURL:string,
+    // dateCreated:number,
+    // title:string,
+    // totalViews:number,
+    // creator:string,
+    // creatorAvatar:string

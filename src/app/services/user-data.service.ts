@@ -1,9 +1,23 @@
 import { Injectable } from '@angular/core';
+import Video from '../models/Video';
+
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root'
 })
 export class UserDataService {
 
-  constructor() { }
+    playlist: Video[] = [];
+
+    constructor() { }
+
+    getPlaylist = (): Video[] => {
+        return this.playlist;
+    }
+
+    addToPlaylist = (video:Video) => {
+        this.playlist.push(video);
+    }
+
+    
 }
