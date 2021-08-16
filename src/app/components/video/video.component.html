@@ -21,7 +21,7 @@
             <p>{{ video["owner.username"] }}</p>
         </div>
         <p>Date Posted: {{ video.created_time * 1000 | date }} | Views: {{ video.views_total }}</p>
-        <button (click)="addToPlaylistBtn()" [disabled]="(isInPlaylist === true)" *ngIf="hideButton">ADD TO PLAYLIST</button>
+        <button (click)="addToPlaylistBtn()" [disabled]="(isInPlaylist === true)">ADD TO PLAYLIST</button>
         <!-- [ngClass]=" {'hidden': (isInPlaylist == true)} " -->
     </div>
 </div>
