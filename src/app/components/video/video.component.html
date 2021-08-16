@@ -1,3 +1,17 @@
+<!-- <p *ngIf="location.path() === '/playlist'; else displayWithButton"></p>
+<div class="container">
+    <img class="vidThumbnail" src="{{ video.thumbnail_360_url }}">
+    <div class="videoDetails">
+        <h3><a href="https://www.dailymotion.com/video/{{ video.id }}" target="_blank">{{ video.title }}</a></h3>
+        <div class="uploaderInfo">
+            <img class="avatar" src='{{ video["owner.avatar_80_url"]}}'>
+            <p>{{ video["owner.username"] }}</p>
+        </div>
+        <p>Date Posted: {{ video.created_time * 1000 | date }} | Views: {{ video.views_total }}</p>
+</div>  
+-->
+
+<!-- <ng-template #displayWithButton> -->
 <div class="container">
     <img class="vidThumbnail" src="{{ video.thumbnail_360_url }}">
     <div class="videoDetails">
@@ -7,6 +21,8 @@
             <p>{{ video["owner.username"] }}</p>
         </div>
         <p>Date Posted: {{ video.created_time * 1000 | date }} | Views: {{ video.views_total }}</p>
-        <button (click)="addToPlaylistBtn()" [disabled]="(isInPlaylist === true)">ADD TO PLAYLIST</button>
+        <button (click)="addToPlaylistBtn()" [disabled]="(isInPlaylist === true)" *ngIf="hideButton">ADD TO PLAYLIST</button>
+        <!-- [ngClass]=" {'hidden': (isInPlaylist == true)} " -->
     </div>
 </div>
+<!-- </ng-template> -->

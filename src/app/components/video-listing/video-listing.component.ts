@@ -14,13 +14,12 @@ export class VideoListingComponent implements OnInit {
     @Input() currVideoList:Video[] = [];
     // For playlist/list of videos in user playlist
     // @Input() currPlaylist:Video[] = [];
-    // isInPlaylist: boolean = false; // to prevent duplicates??
-
 
     constructor(private userData: UserDataService, private videoData: DailyMotionService) { }
 
     ngOnInit(): void {
-
+        // this.currVideoList = this.videoData.videoList;
+        // this.currPlaylist = this.userData.getPlaylist();
 
     }
 }

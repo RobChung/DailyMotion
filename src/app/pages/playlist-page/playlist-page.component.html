@@ -1,8 +1,10 @@
-<h1>Your Playlist</h1>
-<p *ngIf="currVideoList === []; else displaylist">
-    There are currently no videos in your playlist.
-</p>
-
+<div>
+    <h1>Your Playlist</h1>
+    <p *ngIf="currPlaylist.length === 0; else displaylist">
+        There are currently no videos in your playlist.
+    </p>
+</div>
 <ng-template #displaylist>
-    <app-video-listing [currVideoList]="currVideoList"></app-video-listing>
+    <button (click)="clearPlaylistBtn()">Clear Playlist</button>
+    <app-video-listing [currVideoList]="currPlaylist"></app-video-listing>
 </ng-template>
