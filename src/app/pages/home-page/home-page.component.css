@@ -1,7 +1,9 @@
 div {
     text-align: center;
+    /* border: 1px solid red; */
 }
 
 input {
     margin-right: 15px;
+    /* width: 15vw; */
 }

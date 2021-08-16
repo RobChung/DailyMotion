@@ -3,7 +3,5 @@
     There are currently no videos in your playlist.
 </p> -->
 <ng-template #displaylist>
-    <div>
-        <app-video></app-video>
-    </div>
+    <app-video-listing [currPlaylist]="currPlaylist"></app-video-listing>
 </ng-template>

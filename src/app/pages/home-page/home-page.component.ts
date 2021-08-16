@@ -38,11 +38,7 @@ export class HomePageComponent implements OnInit {
 
     searchVideos = () => {
         this.data.getVideosFromAPI(this.values).subscribe((dataFromAPI:any) => {
-            this.currVideoList = dataFromAPI["list"];
-            // console.log("Search videos");
-            // console.log(this.currVideoList);
-
-            
+            this.currVideoList = dataFromAPI["list"];        
             // Updates the observable list with currVideoList
             this.data.videoListObservable.next(this.currVideoList);
         });
