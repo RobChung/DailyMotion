@@ -27,6 +27,7 @@ export class HomePageComponent implements OnInit {
                 this.currVideoList = dataFromObservable;
             }
         )
+        console.log(this.currVideoList);
     }
 
     // To get user input

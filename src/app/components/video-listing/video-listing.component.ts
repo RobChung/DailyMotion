@@ -13,7 +13,7 @@ export class VideoListingComponent implements OnInit {
     // For home/list of searched videos
     @Input() currVideoList:Video[] = [];
     // For playlist/list of videos in user playlist
-    @Input() currPlaylist:Video[] = [];
+    // @Input() currPlaylist:Video[] = [];
     // isInPlaylist: boolean = false; // to prevent duplicates??
 
 

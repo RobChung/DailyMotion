@@ -1,7 +1,8 @@
 <h1>Your Playlist</h1>
-<!-- <p *ngIf="videoList == '[]'; else displaylist">
+<p *ngIf="currVideoList === []; else displaylist">
     There are currently no videos in your playlist.
-</p> -->
+</p>
+
 <ng-template #displaylist>
-    <app-video-listing [currPlaylist]="currPlaylist"></app-video-listing>
+    <app-video-listing [currVideoList]="currVideoList"></app-video-listing>
 </ng-template>
