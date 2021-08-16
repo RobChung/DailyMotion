@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import Video from 'src/app/models/Video';
 import { DailyMotionService } from 'src/app/services/daily-motion.service';
 
@@ -15,11 +16,20 @@ export class HomePageComponent implements OnInit {
     values:string = "";
 
     // list of searched videos from API
-    @Input() videoListFromAPI:Video[] = [];
+    currVideoList:Video[] = [];
+    // To subscribe to view API changes
+    videoListSubscription = new Subscription();
 
     ngOnInit(): void {
+        // Subscribe to changes in daily-motion API
+        this.videoListSubscription = this.data.videoListObservable.subscribe(
+            (dataFromObservable) => {
+                this.currVideoList = dataFromObservable;
+            }
+        )
     }
 
+    // To get user input
     userInput = (e: any) => {
         let userInput = e.target.value;
         this.values = userInput;
@@ -27,9 +37,14 @@ export class HomePageComponent implements OnInit {
     }
 
     searchVideos = () => {
-        this.data.getVideosFromAPI(this.values).subscribe((dataFromAPI: Video[]) => {
-            console.log(dataFromAPI);
-            this.videoListFromAPI = dataFromAPI;
+        this.data.getVideosFromAPI(this.values).subscribe((dataFromAPI:any) => {
+            this.currVideoList = dataFromAPI["list"];
+            // console.log("Search videos");
+            // console.log(this.currVideoList);
+
+            
+            // Updates the observable list with currVideoList
+            this.data.videoListObservable.next(this.currVideoList);
         });
     }
 }

@@ -1,5 +1,4 @@
-import { Input } from '@angular/core';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import Video from 'src/app/models/Video';
 import { DailyMotionService } from 'src/app/services/daily-motion.service';
 import { UserDataService } from 'src/app/services/user-data.service';
@@ -15,12 +14,11 @@ export class VideoComponent implements OnInit {
     // Inject daily-motion service to have access to API data???
     constructor(private userData:UserDataService, private videoData:DailyMotionService) { }
 
-    video:Video = {} as Video;
-    // @Input() currVideo:Video = {} as Video;
+    @Input() video:Video = {} as Video;
     isInPlaylist:boolean = false; // to prevent duplicates??
 
     ngOnInit(): void {
-        // this.videoData.getVideosFromAPI.
+        // Subscribe to updates in the video playlist
     }
 
     addToPlaylistBtn = () => {

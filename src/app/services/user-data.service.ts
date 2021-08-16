@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 import Video from '../models/Video';
 
 
@@ -7,16 +8,27 @@ import Video from '../models/Video';
 })
 export class UserDataService {
 
-    playlist: Video[] = [];
+    // Store
+    currList: Video[] = [];
+    // Subscribe to me, I will output you my data
+    listObservable = new BehaviorSubject<Video[]>([]);
 
     constructor() { }
 
+    // TO get
     getPlaylist = (): Video[] => {
-        return this.playlist;
+        return this.currList;
+    }
+
+    // To set the behavior; array normally static, using behavior allows for it to be more dynamic
+    setPlaylist(data:any) {
+        this.currList = data;
+        // Publish list to any subscribers
+        this.listObservable.next(this.currList);
     }
 
     addToPlaylist = (video:Video) => {
-        this.playlist.push(video);
+        this.currList.push(video);
     }
 
     

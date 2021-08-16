@@ -3,12 +3,4 @@
     <button (click)="searchVideos()">Get Videos</button>
 </div>
 
-<div *ngFor="let v of videoListFromAPI">
-    <p>{{v.title}}</p>
-
-</div>
-    <!-- <p>{{}}</p>
-    <p>{{}}</p>
-    <p>{{}}</p>
-    <p>{{}}</p>
-    <p>{{}}</p> -->
+<app-video-listing [currVideoList]="currVideoList"></app-video-listing>

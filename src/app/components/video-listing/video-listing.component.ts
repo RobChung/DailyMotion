@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import Video from 'src/app/models/Video';
 import { DailyMotionService } from 'src/app/services/daily-motion.service';
 import { UserDataService } from 'src/app/services/user-data.service';
+import { Subscription } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
     selector: 'app-video-listing',
@@ -10,11 +12,15 @@ import { UserDataService } from 'src/app/services/user-data.service';
 })
 export class VideoListingComponent implements OnInit {
 
-    playlist: Video[] = [];
+    @Input() currVideoList:Video[] = [];
 
-    constructor(private userData:UserDataService, private videoData:DailyMotionService) { }
+    isInPlaylist: boolean = false; // to prevent duplicates??
+
+    constructor(private userData: UserDataService, private videoData: DailyMotionService) { }
 
     ngOnInit(): void {
+        
     }
-
 }
+
+

@@ -1,6 +1,4 @@
-<!-- <div>
-    <app-video *ngFor="let v of videoList" []></app-video>
-</div> -->
-<p>aasdf
-    
-</p>
+
+<div *ngFor="let v of currVideoList">
+    <app-video [video]="v"></app-video>
+</div>

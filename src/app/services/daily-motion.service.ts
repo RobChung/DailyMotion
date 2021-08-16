@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { HttpClient } from "@angular/common/http";
 import Video from '../models/Video';
 
@@ -9,9 +9,11 @@ import Video from '../models/Video';
 })
 export class DailyMotionService {
 
-    // videoList: Video[] = [
+    // store videos
+    videoList:Video[] = [];
 
-    // ];
+    // observable; subscribe to me and I will show you data
+    videoListObservable = new BehaviorSubject<Video[]>([]);
 
     constructor(private http:HttpClient) { }
 
@@ -20,12 +22,5 @@ export class DailyMotionService {
         return this.http.get<Video[]>
             (url + `${query}`);
     }
-    // getVideosFromAPI = (query:string): Observable<Video[]> => {
-    //     // const url = `https://api.dailymotion.com/videos?fields=id%2Cthumbnail_360_url%2C
-    //     // created_time%2Cviews_total%2Ctitle%2Cowner.username%2cowner.avatar_80_url&search=`
-    //     return this.http.get<Video[]>
-    //         (`https://api.dailymotion.com/videos?fields=id%2Cthumbnail_360_url%2C
-    //         created_time%2Cviews_total%2Ctitle%2Cowner.username%2cowner.avatar_80_url&search=basketball`);
-    // }
 
 }
