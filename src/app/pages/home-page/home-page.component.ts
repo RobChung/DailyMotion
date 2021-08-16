@@ -27,14 +27,14 @@ export class HomePageComponent implements OnInit {
                 this.currVideoList = dataFromObservable;
             }
         )
-        console.log(this.currVideoList);
+        // console.log(this.currVideoList);
     }
 
     // To get user input
     userInput = (e: any) => {
         let userInput = e.target.value;
         this.values = userInput;
-        console.log(this.values);
+        // console.log(this.values);
     }
 
     searchVideos = () => {

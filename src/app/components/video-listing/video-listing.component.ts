@@ -15,7 +15,7 @@ export class VideoListingComponent implements OnInit {
     // For playlist/list of videos in user playlist
     // @Input() currPlaylist:Video[] = [];
 
-    constructor(private userData: UserDataService, private videoData: DailyMotionService) { }
+    constructor() { }
 
     ngOnInit(): void {
         // this.currVideoList = this.videoData.videoList;

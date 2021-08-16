@@ -41,7 +41,7 @@ export class VideoComponent implements OnInit {
     }
 
     addToPlaylistBtn = () => {
-        console.log("add button pressed")
+        // console.log("add button pressed")
         this.userData.addToPlaylist(this.video); //Observable list gets updated here
         this.isInPlaylist = true;
     }
