@@ -1,10 +1,32 @@
-div {
-    display: grid;
-    grid-template-columns: 3;
-    text-align: center;
+.container{
+    /* border: 1px solid red; */
+    display: flex;
+    margin: auto;
+    width: auto;
+    /* text-align: center;
+    justify-content: center;
+    justify-items: center; */
+}
+
+.videoDetails {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center; 
+}
+
+.uploaderInfo {
+    display: flex;
+    flex-direction: row;
 }
 
 button {
     margin: 0 auto;
     width: 10%;
+}
+
+.thumbnail{
+    text-align: center;
+    height: auto;
+    width: 50vh;
 }

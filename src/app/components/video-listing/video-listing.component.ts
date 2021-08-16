@@ -2,8 +2,6 @@ import { Component, OnInit, Input } from '@angular/core';
 import Video from 'src/app/models/Video';
 import { DailyMotionService } from 'src/app/services/daily-motion.service';
 import { UserDataService } from 'src/app/services/user-data.service';
-import { Subscription } from 'rxjs';
-import { BehaviorSubject } from 'rxjs';
 
 @Component({
     selector: 'app-video-listing',

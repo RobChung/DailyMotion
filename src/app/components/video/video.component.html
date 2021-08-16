@@ -1,15 +1,12 @@
-<!-- <div>
-    <img src="">
-    <h3>{{ video.title }}</h3>
-    <p>Replace with profile photo of creator</p>
-    <p>Date Posted: (dateHere) | Views: (no.OfViewsHere)</p>
-    <button (click)="addToPlaylistBtn()">ADD TO PLAYLIST</button>
-</div> -->
-
-<div>
-    <p>Preview img of video here</p>
-    <h3>{{ video.title }}</h3> <!-- Clicking on title should href = dailymotion.com/video/{{ id }} -->
-    <p>Replace with profile photo of creator</p>
-    <p>Date Created: {{ video.created_time}} | Views: {{ video.views_total }}</p>
-    <button (click)="addToPlaylistBtn()">ADD TO PLAYLIST</button>
+<div class="container">
+    <img src="{{ video.thumbnail_360_url }}">
+    <div class="videoDetails">
+        <h3><a href="https://www.dailymotion.com/video/{{ video.id }}">{{ video.title }}</a></h3><!-- Clicking on title should href = dailymotion.com/video/{{ id }} -->
+        <div class="uploaderInfo">
+            <img id="thumbnail" src='{{ video["owner.avatar_80_url"]}}'>
+            <p>{{ video["owner.username"] }}</p>
+        </div>
+        <p>Date Created: {{ video.created_time * 1000 | date }} | Views: {{ video.views_total }}</p>
+        <button (click)="addToPlaylistBtn()">ADD TO PLAYLIST</button>
+    </div>
 </div>
