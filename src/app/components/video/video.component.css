@@ -1,17 +1,15 @@
 div.container {
     /* border: 1px solid yellow; */
     background-color: rgb(209, 244, 250);
+    border: rgba(209, 244, 250, 0.849);
+    box-shadow: 2px 5px rgba(0, 42, 49, 0.438);
     display: flex;
-    margin: 15px;
+    margin: 15px auto;
     align-items: center;
     justify-content: space-around;
     align-content: center;
-    justify-self: center;
     padding: 30px;
-    /* width: 80vw;
-    height: auto;
-    position:fixed; */
-    /* height: auto; */
+    max-width: 80%;
 }
 
 .vidThumbnail {
@@ -40,9 +38,11 @@ img.avatar {
 button {
     border-radius: 10%;
     background-color:silver;
+    font-size: 2vw 2vh;
     font-weight: bold;
     /* font-size:inherit; */
-    width: 40%;
+    width: 20vw;
+    height: auto;
     margin: 0 auto;
 }
 
