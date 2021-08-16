@@ -1,9 +1,9 @@
 <div class="container">
-    <img src="{{ video.thumbnail_360_url }}">
+    <img class="vidThumbnail" src="{{ video.thumbnail_360_url }}">
     <div class="videoDetails">
-        <h3><a href="https://www.dailymotion.com/video/{{ video.id }}">{{ video.title }}</a></h3><!-- Clicking on title should href = dailymotion.com/video/{{ id }} -->
+        <h3><a href="https://www.dailymotion.com/video/{{ video.id }}" target="_blank">{{ video.title }}</a></h3><!-- Clicking on title should href = dailymotion.com/video/{{ id }} -->
         <div class="uploaderInfo">
-            <img id="thumbnail" src='{{ video["owner.avatar_80_url"]}}'>
+            <img class="avatar" src='{{ video["owner.avatar_80_url"]}}'>
             <p>{{ video["owner.username"] }}</p>
         </div>
         <p>Date Created: {{ video.created_time * 1000 | date }} | Views: {{ video.views_total }}</p>

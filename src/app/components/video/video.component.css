@@ -1,18 +1,27 @@
 .container{
-    /* border: 1px solid red; */
+    background-color: rgb(145, 217, 219);
+    width: 50%;
+    height: auto;
+    flex-direction: row;
     display: flex;
-    margin: auto;
-    width: auto;
-    /* text-align: center;
     justify-content: center;
-    justify-items: center; */
+    align-items: center;
+    justify-items: center;
+}
+
+.vidThumbnail {
+    height: auto;
+    width: 40vw;
+    /* float: left; */
+    margin: 15px;
 }
 
 .videoDetails {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    justify-items: center; 
+    width: 100vw;
+    /* border: 1px solid red; */
+    text-align: center;
 }
 
 .uploaderInfo {
@@ -22,11 +31,12 @@
 
 button {
     margin: 0 auto;
-    width: 10%;
+    border-radius: 10%;
+
 }
 
-.thumbnail{
-    text-align: center;
+.avatar{
+    /* float: left; */
     height: auto;
-    width: 50vh;
+    width: 5vw;
 }

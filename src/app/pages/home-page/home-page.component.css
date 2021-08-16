@@ -1,3 +1,7 @@
 div {
     text-align: center;
 }
+
+input {
+    margin-right: 15px;
+}
